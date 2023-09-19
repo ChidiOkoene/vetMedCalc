@@ -7,9 +7,8 @@ document.getElementById("dosageForm").addEventListener("submit", function(event)
     var dosage = parseFloat(document.getElementById("dosage").value);
 
     // Perform dosage calculation and other logic here
-    function dose_calculator(selectedDrug, weight, dosage) {
-        
-    }
+   
+    calculatedDosage = selectedDrug * dosage / weight 
 
     // Display the results on the same page
     var resultContainer = document.getElementById("resultContainer");
@@ -17,5 +16,6 @@ document.getElementById("dosageForm").addEventListener("submit", function(event)
 
     // Optionally, you can submit the form data to a server using AJAX if needed
 });
+
 
 
