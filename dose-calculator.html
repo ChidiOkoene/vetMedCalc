@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <script src="dose_calculator.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Veterinary Health App</title>
 </head>
 <body>
@@ -12,26 +13,26 @@
 
             <label for="Drug">Drug:</label>
             <select id="Drug" name="Drug">
-                <option value="Amoxicillin">Amoxicillin</option>
-                <option value="Ivermectin">Ivermectin</option>
-                <option value="Rimadyl">Rimadyl (Carprofen)</option>
-                <option value="Metronidazole">Metronidazole</option>
-                <option value="Prednisone">Prednisone</option>
-                <option value="Doxycycline">Doxycycline</option>
-                <option value="Furosemide">Furosemide</option>
-                <option value="Cephalexin">Cephalexin</option>
-                <option value="Enrofloxacin">Enrofloxacin (Baytril)</option>
-                <option value="Ketamine">Ketamine</option>
-                <option value="Diazepam">Diazepam (Valium)</option>
-                <option value="Heartgard">Heartgard</option>
-                <option value="Revolution">Revolution (Selamectin)</option>
-                <option value="Apomorphine">Apomorphine</option>
-                <option value="Cerenia">Cerenia (Maropitant)</option>
-                <option value="Epinephrine">Epinephrine</option>
-                <option value="Tramadol">Tramadol</option>
-                <option value="Meloxicam">Meloxicam (Metacam)</option>
-                <option value="Phenobarbital">Phenobarbital</option>
-                <option value="Thyroxine">Thyroxine (Levothyroxine)</option>
+                <option value="7">Amoxicillin</option>
+                <option value="0.2">Ivermectin</option>
+                <option value="3">Rimadyl (Carprofen)</option>
+                <option value="7">Metronidazole</option>
+                <option value="5">Prednisone</option>
+                <option value="4">Doxycycline</option>
+                <option value="2">Furosemide</option>
+                <option value="8">Cephalexin</option>
+                <option value="6">Enrofloxacin (Baytril)</option>
+                <option value="0.2">Ketamine</option>
+                <option value="1">Diazepam (Valium)</option>
+                <option value="8">Heartgard</option>
+                <option value="3">Revolution (Selamectin)</option>
+                <option value="2">Apomorphine</option>
+                <option value="6">Cerenia (Maropitant)</option>
+                <option value="7">Epinephrine</option>
+                <option value="5">Tramadol</option>
+                <option value="9">Meloxicam (Metacam)</option>
+                <option value="3">Phenobarbital</option>
+                <option value="2">Thyroxine (Levothyroxine)</option>
             </select><br><br>
             
             <label for="Weight">Weight (kg):</label>
@@ -40,10 +41,10 @@
             <label for="dosage">dosage:</label>
             <input type="number" id="dosage" name="dosage" required><br><br>
             
-            <input type="submit" value="Submit">
+            <input type="button" value="Calculate" onclick="calculateDosage()">
         </form>
-    <div>
-
+    <div id="result">
+        
     <div>
         
     </div>
