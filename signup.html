@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="signup.js"></script>
     <title>Signup Form</title>
 </head>
 <body>
     <h1>Sign Up</h1>
-    <form action="process_signup.php" method="POST">
+    <form id="signup-form" action="process_signup.php" method="POST">
         <label for="first_name">First Name:</label>
         <input type="text" id="first_name" name="first_name" required><br><br>
 
@@ -35,8 +36,11 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
 
+        <label for="confirm_password">confirm password:</label>
+        <input type="confirm_password" id="confirm_password" name="confirm_password" required><br><br>
 
-        <input type="submit" value="Sign Up">
+
+        <input id="submit" type="submit" value="Sign Up">
     </form>
 </body>
 </html>
