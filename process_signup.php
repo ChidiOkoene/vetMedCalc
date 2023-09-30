@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $vcn = $_POST["vcn"];
     $state = $_POST["state"];
     $city = $_POST["city"];
+    $password = $_POST["password"];
 
     // Connect to your MySQL database (replace with your database credentials)
     $mysqli = new mysqli("localhost", "username", "password", "database_name");
@@ -20,9 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare and execute the SQL query to insert data into the database
-    $sql = "INSERT INTO users (first_name, middle_name, last_name, email, phone, vcn, state, city) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO users (first_name, middle_name, last_name, email, phone, vcn, state, city, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
     $stmt = $mysqli->prepare($sql);
-    $stmt->bind_param("ssssssss", $first_name, $middle_name, $last_name, $email, $phone, $vcn, $state, $city);
+    $stmt->bind_param("ssssssss", $first_name, $middle_name, $last_name, $email, $phone, $vcn, $state, $city, $password);
     
     if ($stmt->execute()) {
         echo "Registration successful!";

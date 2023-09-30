@@ -1,40 +1,19 @@
-document.getElementById("dosageForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the form from submitting normally
-
+function calculateDosage() {
     // Retrieve form data
-    var selectedDrug = document.getElementById("Drug").value;
+    var selectedDrug = parseFloat(document.getElementById("Drug").value);
     var weight = parseFloat(document.getElementById("Weight").value);
     var conc = parseFloat(document.getElementById("conc").value);
 
-    // Perform dosage calculation and other logic here
-    // myscript.js
-
-    function calculateDosage() {
-    // Get the selected drug value
-        var selectedDrug = document.getElementById("Drug").value;
-
-    // Get the weight entered by the user
-        var weight = parseFloat(document.getElementById("Weight").value);
-
-        var conc = parseFloat(document.getElementById("conc").value);
-
-    // Perform a calculation using the selected drug value and weight
-        var dosage = selectedDrug * conc / weight;
-
-    // Display the result
-        var resultContainer = document.getElementById("result");
-        resultContainer.innerHTML = "Dosage: " + dosage;
+    // Check if weight and concentration are valid numbers
+    if (isNaN(weight) || isNaN(conc)) {
+        alert("Please enter valid numeric values for weight and concentration.");
+        return; // Stop further execution
     }
 
-   
-    calculatedDosage = selectedDrug * conc / weight 
+    // Perform dosage calculation
+    var dosage = selectedDrug * conc / weight;
 
-    // Display the results on the same page
-    var resultContainer = document.getElementById("resultContainer");
-    resultContainer.innerHTML = "Dosage: " + calculatedDosage; // Replace with your actual calculation
-
-    // Optionally, you can submit the form data to a server using AJAX if needed
-});
-
-
-
+    // Display the result in the span
+    var dosageValueSpan = document.getElementById("dosageValue");
+    dosageValueSpan.textContent = dosage.toFixed(2); // Display dosage with 2 decimal places
+}

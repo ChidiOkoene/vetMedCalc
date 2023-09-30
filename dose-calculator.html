@@ -1,54 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="dose_calculator.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Veterinary Health App</title>
-</head>
-<body>
-    <div>
-        <form id="dosageForm" action="#" method="post">
-
-            <label for="Drug">Drug:</label>
-            <select id="Drug" name="Drug">
-                <option value="7">Amoxicillin</option>
-                <option value="0.2">Ivermectin</option>
-                <option value="3">Rimadyl (Carprofen)</option>
-                <option value="7">Metronidazole</option>
-                <option value="5">Prednisone</option>
-                <option value="4">Doxycycline</option>
-                <option value="2">Furosemide</option>
-                <option value="8">Cephalexin</option>
-                <option value="6">Enrofloxacin (Baytril)</option>
-                <option value="0.2">Ketamine</option>
-                <option value="1">Diazepam (Valium)</option>
-                <option value="8">Heartgard</option>
-                <option value="3">Revolution (Selamectin)</option>
-                <option value="2">Apomorphine</option>
-                <option value="6">Cerenia (Maropitant)</option>
-                <option value="7">Epinephrine</option>
-                <option value="5">Tramadol</option>
-                <option value="9">Meloxicam (Metacam)</option>
-                <option value="3">Phenobarbital</option>
-                <option value="2">Thyroxine (Levothyroxine)</option>
-            </select><br><br>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="dose_calculator.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Veterinary Health App</title>
+    </head>
+    <body>
+        <div>
+            <form id="dosageForm" action="#" method="post">
+                <label for="Drug">Drug:</label>
+                <select id="Drug" name="Drug">
+                    <!-- Options with values representing concentrations -->
+                    <option value="7">Amoxicillin</option>
+                    <option value="0.2">Ivermectin</option>
+                    <option value="3">Rimadyl (Carprofen)</option>
+                    <option value="7">Metronidazole</option>
+                    <option value="5">Prednisone</option>
+                    <option value="4">Doxycycline</option>
+                    <option value="2">Furosemide</option>
+                    <option value="8">Cephalexin</option>
+                    <option value="6">Enrofloxacin (Baytril)</option>
+                    <option value="0.2">Ketamine</option>
+                    <option value="1">Diazepam (Valium)</option>
+                    <option value="8">Heartgard</option>
+                    <option value="3">Revolution (Selamectin)</option>
+                    <option value="2">Apomorphine</option>
+                    <option value="6">Cerenia (Maropitant)</option>
+                    <option value="7">Epinephrine</option>
+                    <option value="5">Tramadol</option>
+                    <option value="9">Meloxicam (Metacam)</option>
+                    <option value="3">Phenobarbital</option>
+                    <option value="2">Thyroxine (Levothyroxine)</option>
+                    <!-- Add more options with corresponding values for other drugs -->
+                </select><br><br>
+                
+                <label for="Weight">Weight (kg):</label>
+                <input type="number" id="Weight" name="Weight" required><br><br>
+    
+                <label for="conc">Concentration:</label>
+                <input type="number" id="conc" name="conc" required><br><br>
+                
+                <!-- Use a button to trigger the calculation -->
+                <input type="button" value="Calculate" onclick="calculateDosage()">
+            </form>
+        </div>
             
-            <label for="Weight">Weight (kg):</label>
-            <input type="number" id="Weight" name="Weight" required><br><br>
-
-            <label for="conc">conc:</label>
-            <input type="number" id="conc" name="conc" required><br><br>
-            
-            <input type="button" value="Calculate" onclick="calculateDosage()">
-        </form>
-    <div id="result">
-        
-    <div>
-        
-    </div>
-<body>
-
-
-
+        <div id="result">
+            <p>
+                Dosage: <span id="dosageValue">-</span>
+            </p>
+        </div>
+    
+    </body>
+    </html>
+    
